@@ -66,3 +66,57 @@ function solution(start, end) {
 
   return answer;
 }
+
+/* flag에 따라 다른 값 반환하기 */
+/* 
+문제 설명
+두 정수 a, b와 boolean 변수 flag가 매개변수로 주어질 때, flag가 true면 a + b를 false면 a - b를 return 하는 solution 함수를 작성해 주세요.
+*/
+
+function solution(a, b, flag) {
+  return flag ? a + b : a - b;
+}
+
+/* 공백으로 구분하기 1
+문제 설명
+단어가 공백 한 개로 구분되어 있는 문자열 my_string이 매개변수로 주어질 때, my_string에 나온 단어를 앞에서부터 순서대로 담은 문자열 배열을 return 하는 solution 함수를 작성해 주세요.
+*/
+
+function solution(my_string) {
+  var answer = [];
+  answer = my_string.split(' ');
+  return answer;
+}
+
+/* 문자열의 앞의 n글자
+문제 설명
+문자열 my_string과 정수 n이 매개변수로 주어질 때, my_string의 앞의 n글자로 이루어진 문자열을 return 하는 solution 함수를 작성해 주세요.
+ */
+function solution(my_string, n) {
+  var answer = '';
+  answer = my_string.slice(0, n);
+  return answer;
+}
+
+/* 부분 문자열
+문제 설명
+어떤 문자열 A가 다른 문자열 B안에 속하면 A를 B의 부분 문자열이라고 합니다. 예를 들어 문자열 "abc"는 문자열 "aabcc"의 부분 문자열입니다.
+
+문자열 str1과 str2가 주어질 때, str1이 str2의 부분 문자열이라면 1을 부분 문자열이 아니라면 0을 return하도록 solution 함수를 완성해주세요.
+*/
+
+function solution(str1, str2) {
+  if (str2.includes(str1)) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+function solution(str1, str2) {
+  var answer = 0;
+  const str = str1;
+  const result = str2.indexOf(str);
+  answer = result >= 0 ? 1 : 0;
+  return answer;
+}
