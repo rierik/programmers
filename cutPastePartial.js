@@ -16,16 +16,6 @@ function solution(my_strings, parts) {
   return answer;
 }
 
-solution(
-  ['progressive', 'hamburger', 'hammer', 'ahocorasick'],
-  [
-    [0, 4],
-    [1, 2],
-    [3, 5],
-    [7, 7],
-  ],
-);
-
 /* 다른사람 풀이 */
 function solution(my_strings, parts) {
   return parts
