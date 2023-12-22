@@ -19,3 +19,24 @@ function solution(arr, flag) {
 
   return result;
 }
+
+/* 다른 풀이 */
+function solution(arr, flag) {
+  return arr.reduce((prev, num, i) => (flag[i] ? [...prev, ...new Array(num * 2).fill(num)] : prev.slice(0, -num)), []);
+}
+
+function solution(arr, flag) {
+  var answer = [];
+
+  arr.forEach((x, i) => {
+    if (flag[i]) {
+      for (let i = 0; i < x * 2; i++) {
+        answer.push(x);
+      }
+    } else {
+      answer = answer.slice(0, -x);
+    }
+  });
+
+  return answer;
+}
