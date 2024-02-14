@@ -47,7 +47,8 @@ function solution(friends, gifts) {
     let count = 0;
     for (const [key, give] of objValue) {
       const take = state.get(key).get(name);
-      if (give > take || (give === take && (gisu.get(name) || 0) > gisu.get(key))) {
+
+      if (give > take || (give === take && (gisu.get(name) || 0) > (gisu.get(key) || 0))) {
         count++;
       }
     }
