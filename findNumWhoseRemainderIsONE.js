@@ -11,3 +11,12 @@ function solution(n) {
 }
 
 console.log(solution(14));
+
+/*  */
+function solution(n, x = 1) {
+  while (x++) {
+    if (n % x === 1) {
+      return x;
+    }
+  }
+}
