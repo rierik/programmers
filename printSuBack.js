@@ -17,3 +17,13 @@ function solution(num) {
 }
 
 console.log(solution(5));
+
+/*  */
+function waterMelon(n) {
+  var result = '';
+  //함수를 완성하세요
+  for (var i = 0; i < n; i++) {
+    result += i % 2 == 0 ? '수' : '박';
+  }
+  return result;
+}
