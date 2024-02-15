@@ -1,7 +1,7 @@
 function solution(seoul) {
-  var idx = seoul.indexOf('Kim');
-
-  return '김서방은 ' + idx + '에 있다';
+  var answer = '';
+  answer = `김서방은 ${seoul.indexOf('Kim')}에 있다`;
+  return answer;
 }
 
 solution(['Jane', 'song', 'kwon', 'Kim']);
