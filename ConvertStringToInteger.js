@@ -6,4 +6,14 @@ function solution(s) {
   return answer;
 }
 
-solution('-1234');
+/*  */
+/* 사칙연산에 의해 문자가 자동으로 파싱된다. */
+function strToInt(str) {
+  return str / 1;
+}
+function strToInt(str) {
+  console.log(str);
+  return +str;
+}
+
+strToInt('-1234');
