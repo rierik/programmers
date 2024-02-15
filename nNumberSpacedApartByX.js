@@ -9,4 +9,10 @@ function solution(x, n) {
   }
   return answer;
 }
-solution(2, 5);
+
+/*  */
+function solution(x, n) {
+  return Array(n)
+    .fill(x)
+    .map((v, i) => (i + 1) * v);
+}
