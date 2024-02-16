@@ -13,11 +13,15 @@ arr	return
 
 function solution(arr) {
   var answer = [];
-  console.log(arr, ...arr);
-
   arr.splice(arr.indexOf(Math.min(...arr)), 1);
 
   return arr.length <= 1 ? (answer = [-1]) : (answer = arr);
 }
 
 solution([4, 3, 2, 1]);
+
+/*  */
+function solution(arr) {
+  const min = Math.min(...arr);
+  return arr.length !== 1 ? arr.filter((i) => i !== min) : [-1];
+}
