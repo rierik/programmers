@@ -29,3 +29,12 @@ function solution(d, budget) {
 }
 
 console.log(solution([2, 2], 10));
+
+/*  */
+function solution(d, budget) {
+  return d
+    .sort((a, b) => a - b)
+    .reduce((count, price) => {
+      return count + ((budget -= price) >= 0);
+    }, 0);
+}
