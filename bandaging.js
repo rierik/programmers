@@ -1,3 +1,6 @@
+// 문제
+//https://school.programmers.co.kr/learn/courses/30/lessons/250137?language=javascript
+
 function solution(bandage, health, attacks) {
   var answer = health;
   let haveAttacktCount = 0;
@@ -27,4 +30,26 @@ function solution(bandage, health, attacks) {
   return answer;
 }
 
-// console.log(test);
+solution([5, 1, 5], 30, [
+  [2, 10],
+  [9, 15],
+  [10, 5],
+  [11, 5],
+]);
+
+function solution(bandage, health, attacks) {
+  let currHealth = health;
+  let currTime = 0;
+
+  for (let [attackTime, damage] of attacks) {
+    let diffTime = attackTime - currTime - 1;
+    currHealth += diffTime * bandage[1] + Math.floor(diffTime / bandage[0]) * bandage[2];
+
+    if (currHealth > health) currHealth = health;
+    currHealth -= damage;
+    if (currHealth <= 0) return -1;
+    currTime = attackTime;
+  }
+
+  return currHealth;
+}
