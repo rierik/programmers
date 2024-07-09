@@ -14,4 +14,21 @@ function solution(ineq, eq, n, m) {
 
   return answer;
 }
-solution('>', '=', 2, 2);
+
+//다른 풀이
+function solution(ineq, eq, n, m) {
+  const comparisons = {
+    '>=': (a, b) => a >= b,
+    '<=': (a, b) => a <= b,
+    '>!': (a, b) => a > b,
+    '<!': (a, b) => a < b,
+  };
+
+  const operator = ineq + eq;
+  console.log('comparisons[operator](n, m) :: ', comparisons[operator]);
+  return comparisons[operator](n, m) ? 1 : 0;
+}
+console.log(solution('>', '=', 5, 3)); // 1
+console.log(solution('<', '=', 5, 3)); // 0
+console.log(solution('>', '!', 5, 3)); // 1
+console.log(solution('<', '!', 5, 3)); // 0
