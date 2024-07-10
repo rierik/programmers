@@ -80,5 +80,26 @@ function solution(N, stages) {
   return answer;
 }
 
+//다른풀이
+//훨씬 깔끔하고 이해하기 좋음 내가 짜려던 코드에서 사이드 이펙트 날 수 있는 부분을 만들지 않고 깔끔하게 만들었음
+function solution(N, stages) {
+  let result = [];
+  for (let i = 1; i <= N; i++) {
+    let reach = stages.filter((x) => {
+      return x >= i;
+    }).length;
+    // console.log('reach', reach);
+    let curr = stages.filter((x) => {
+      // console.log(x, i);
+      return x === i;
+    }).length;
+    console.log('curr', curr);
+    result.push([i, curr / reach]);
+    console.log(result);
+  }
+  result.sort((a, b) => b[1] - a[1]);
+  return result.map((x) => x[0]);
+}
+
 solution(5, [2, 1, 2, 6, 2, 4, 3, 3]);
-solution(4, [4, 4, 4, 4, 4]);
+// solution(4, [4, 4, 4, 4, 4]);
