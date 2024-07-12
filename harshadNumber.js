@@ -20,3 +20,15 @@ console.log(solution(10));
 console.log(solution(12));
 console.log(solution(11));
 console.log(solution(13));
+
+//다른 풀이
+function solution(x) {
+  let num = x;
+  let sum = 0;
+  do {
+    sum += x % 10;
+    x = Math.floor(x / 10);
+  } while (x > 0);
+
+  return !(num % sum);
+}
