@@ -26,7 +26,7 @@ function solution(x) {
     sum += x % 10;
     x = Math.floor(x / 10);
   } while (x > 0);
-  ㄴ;
+
   return !(num % sum);
 }
 
