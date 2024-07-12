@@ -1,5 +1,5 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/12947
-function solution(x) {
+function solutsion(x) {
   var answer = true;
   const nMap = x
     .toString()
@@ -16,19 +16,21 @@ function solution(x) {
   return answer;
 }
 
-console.log(solution(10));
-console.log(solution(12));
-console.log(solution(11));
-console.log(solution(13));
-
 //다른 풀이
 function solution(x) {
   let num = x;
   let sum = 0;
+
+  //자리수별로 수를 더하기
   do {
     sum += x % 10;
     x = Math.floor(x / 10);
   } while (x > 0);
-
+  ㄴ;
   return !(num % sum);
 }
+
+console.log(solution(10));
+console.log(solution(12));
+console.log(solution(11));
+console.log(solution(13));
