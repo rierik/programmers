@@ -20,4 +20,11 @@ function solution(s, n) {
   return answer;
 }
 
+function solution(s, n) {
+  var chars = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXY                          ';
+  return s
+    .split('')
+    .map((e) => chars[chars.indexOf(e) + n])
+    .join('');
+}
 console.log(solution('a B z', 4));
