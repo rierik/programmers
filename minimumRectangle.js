@@ -9,6 +9,17 @@ function solution(sizes) {
   return Math.max(...w_max) * Math.max(...h_max);
 }
 
+function solution(sizes) {
+  const [hor, ver] = sizes.reduce(
+    ([h, v], [a, b]) => {
+      console.log('>>>', [h, v], [a, b]);
+      return [Math.max(h, Math.max(a, b)), Math.max(v, Math.min(a, b))];
+    },
+    [0, 0],
+  );
+  return hor * ver;
+}
+
 console.log(
   solution([
     [60, 50],
