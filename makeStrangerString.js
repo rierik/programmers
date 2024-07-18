@@ -1,12 +1,11 @@
 function solution(s) {
   var answer = '';
-  let count = 0;
 
   const splitString = s.split(' ');
 
   console.log(splitString);
   splitString.map((s, i) => {
-    // console.log(i);
+    // console.log(s, '\n', i);
     const oneSpell = s.split('');
     for (const spellIdx in oneSpell) {
       if (spellIdx % 2 === 0) {
@@ -18,7 +17,6 @@ function solution(s) {
     }
 
     if (i < splitString.length - 1) answer += ' ';
-    count++;
   });
   console.log(answer);
   return answer;
