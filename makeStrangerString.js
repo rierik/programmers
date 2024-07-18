@@ -1,8 +1,10 @@
 function solution(s) {
   var answer = '';
   let count = 0;
+
   const splitString = s.split(' ');
-  // console.log(splitString);
+
+  console.log(splitString);
   splitString.map((s, i) => {
     // console.log(i);
     const oneSpell = s.split('');
@@ -11,13 +13,15 @@ function solution(s) {
         // console.log(oneSpell[spellIdx].toUpperCase());
         answer += oneSpell[spellIdx].toUpperCase();
       } else {
-        answer += oneSpell[spellIdx];
+        answer += oneSpell[spellIdx].toLowerCase();
       }
     }
-    if (count < splitString.length - 1) answer += ' ';
+
+    if (i < splitString.length - 1) answer += ' ';
     count++;
   });
+  console.log(answer);
   return answer;
 }
 
-console.log(solution('try hello world'));
+console.log(solution('try    hello world'));
