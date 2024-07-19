@@ -12,9 +12,7 @@ function solution(numbers) {
   const set = new Set(temp);
   answer = [...set];
 
-  answer.sort(function (a, b) {
-    return a - b;
-  });
+  answer.sort((a, b) => a - b);
 
   return answer;
 }
