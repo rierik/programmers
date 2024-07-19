@@ -24,4 +24,13 @@ function solution(food) {
   return (answer = arr.join('') + '0' + arr.reverse().join(''));
 }
 
-console.log(solution([1, 7, 1, 2])); //"1223330333221"
+//다른 풀이
+function solution(food) {
+  let res = '';
+  for (let i = 1; i < food.length; i++) {
+    res += String(i).repeat(Math.floor(food[i] / 2));
+  }
+
+  return res + '0' + [...res].reverse().join('');
+}
+console.log(solution([1, 7, 1, 2])); //"111303111"
