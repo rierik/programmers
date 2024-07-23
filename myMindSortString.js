@@ -20,6 +20,7 @@ function solution(strings, n) {
     const chr2 = b.charAt(n);
 
     if (chr1 == chr2) {
+      //true - false = 1
       return (a > b) - (a < b);
     } else {
       return (chr1 > chr2) - (chr1 < chr2);
