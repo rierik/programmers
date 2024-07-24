@@ -1,5 +1,5 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/178871
-function solutions(players, callings) {
+function solution(players, callings) {
   var answer = players;
   callings.map((call, i) => {
     console.log(answer.indexOf(call));
@@ -40,6 +40,45 @@ function solution(players, callings) {
   }
 
   return answer;
+}
+
+//다른풀이
+function solution(players, callings) {
+  let idx;
+  let name1;
+  let name2;
+  const idxList = {};
+
+  players.forEach((name, index) => (idxList[name] = index));
+  for (let call of callings) {
+    idx = idxList[call];
+    name1 = players[idx];
+    name2 = players[idx - 1];
+    idxList[call] -= 1;
+    idxList[name2] += 1;
+    players[idx] = name2;
+    players[idx - 1] = name1;
+  }
+
+  return players;
+}
+
+function solution(players, callings) {
+  let maps = {};
+  for (let i = 0; i < players.length; i++) {
+    maps[players[i]] = i;
+  }
+  callings.forEach((v) => {
+    let num = maps[v];
+    let temp = players[num - 1];
+    players[num - 1] = v;
+    players[num] = temp;
+    maps[v]--;
+    maps[players[num]]++;
+  });
+  return Object.entries(maps)
+    .sort((a, b) => a[1] - b[1])
+    .map((v) => v[0]);
 }
 
 console.log(solution(['mumu', 'soe', 'poe', 'kai', 'mine'], ['kai', 'kai'])); //['mumu', 'kai', 'soe', 'poe', 'mine']
