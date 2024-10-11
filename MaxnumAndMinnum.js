@@ -17,6 +17,17 @@ function solution(s) {
   return Math.min(...arr) + ' ' + Math.max(...arr);
 }
 
+//다른 풀이
+
+function solution(s) {
+  var arr = s.split(' ');
+  arr.sort((a, b) => a - b);
+
+  var answer = arr[0] + ' ' + arr[arr.length - 1];
+
+  return answer;
+}
+
 console.log(solution('1 2 3 4')); //	"1 4"
 console.log(solution('-1 -2 -3 -4')); //	"-4 -1"
 console.log(solution('-1 -1')); //"-1 -1"
