@@ -5,7 +5,7 @@ function solution(s) {
 
   while (s !== '1') {
     // 1단계: 0을 제거
-    zeroCount += (s.match(/0/g) || []).length;
+    zeroCount += s.match(/0/g).length;
     s = s.replace(/0/g, '');
 
     // 2단계: 문자열의 길이를 이진수로 변환
