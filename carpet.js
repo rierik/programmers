@@ -12,3 +12,16 @@ function solution(brown, yellow) {
   }
 }
 console.log(solution(24, 24));
+
+// 다른 사람 풀이
+function solution(brown, red) {
+  var answer = [];
+  for (var i = 3; i <= (brown + red) / i; i++) {
+    var x = Math.floor((brown + red) / i);
+    if ((x - 2) * (i - 2) === red) {
+      break;
+    }
+  }
+
+  return [x, i];
+}
