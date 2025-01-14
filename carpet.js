@@ -2,6 +2,8 @@
 function solution(brown, yellow) {
   const total = brown + yellow; // 전체 격자 수
 
+  //brown 10 yellow 2로 가정
+  //                    Math.sqrt(total) 은 루트12로 3까지만 탐색
   for (let height = 3; height <= Math.sqrt(total); height++) {
     if (total % height === 0) {
       const width = total / height; // 가로 길이 계산
