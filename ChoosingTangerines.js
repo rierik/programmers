@@ -32,3 +32,17 @@ console.log(solution(6, [1, 3, 2, 5, 4, 5, 2, 3]));
 
 // console.log(solution(4, [1, 3, 2, 5, 4, 5, 2, 3]));
 // console.log(solution(2, [1, 1, 1, 1, 2, 2, 2, 3]));
+
+//다른 사람 풀이
+function solution(k, tangerine) {
+  let answer = 0;
+  const tDict = {};
+  tangerine.forEach((t) => (tDict[t] = (tDict[t] || 0) + 1));
+  const tArr = Object.values(tDict).sort((a, b) => b - a);
+  for (const t of tArr) {
+    answer++;
+    if (k > t) k -= t;
+    else break;
+  }
+  return answer;
+}
