@@ -1,13 +1,12 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/12949
 function solution(arr1, arr2) {
-  const n = arr1.length;
-  const m = arr2[0].length;
-  const k = arr2.length;
+  const m = arr2[0].length; //(arr1의 열 개수 == arr2의 행 개수)
+  const k = arr2.length; //arr2의 열 개수
 
-  const result = Array.from({ length: n }, () => Array(m).fill(0));
+  const result = Array.from({ length: arr1.length }, () => Array(m).fill(0));
 
   // 행렬 곱셈 수행
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < arr1.length; i++) {
     // arr1의 행 순회
     for (let j = 0; j < m; j++) {
       // arr2의 열 순회
