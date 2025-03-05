@@ -15,7 +15,7 @@ function solution(k, dungeons) {
 
       visited[i] = true; // 탐험 시작 (방문 체크)
       explore(currentFatigue - consumeFatigue, exploredCount + 1); // 다음 던전 탐험
-      visited[i] = false; // 원래 상태로 되돌리기 (백트래킹)
+      visited[i] = false; // 원래 상태로 되돌리기 (백트래킹) 재귀 호출은 스택 구조로 실행된다. 각 호출이 끝나면 visited[i] = false;를 실행하면서 탐색을 원상복구한다.
     }
   }
 
