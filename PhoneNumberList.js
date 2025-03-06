@@ -15,3 +15,12 @@ function solution(phone_book) {
 console.log(solution(['119', '97674223', '1195524421'])); //false
 // console.log(solution(['123', '456', '789'])); //true
 //console.log(solution(['12', '123', '1235', '567', '88'])); //false
+
+//다른 사람 풀이
+function solution(phoneBook) {
+  return !phoneBook.sort().some((t, i) => {
+    if (i === phoneBook.length - 1) return false;
+
+    return phoneBook[i + 1].startsWith(phoneBook[i]);
+  });
+}
