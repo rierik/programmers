@@ -1,13 +1,14 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/17677
 function solution(str1, str2) {
-  function getBigrams(str) {
-    const bigrams = [];
-    str = str.toLowerCase(); // 대소문자 구분X
-    for (let i = 0; i < str.length - 1; i++) {
-      const pair = str[i] + str[i + 1];
-      if (/^[a-z]{2}$/.test(pair)) bigrams.push(pair); // 영문자 쌍만 추가
+  function explode(text) {
+    const result = [];
+    for (let i = 0; i < text.length - 1; i++) {
+      const node = text.substr(i, 2);
+      if (node.match(/[A-Za-z]{2}/)) {
+        result.push(node.toLowerCase());
+      }
     }
-    return bigrams;
+    return result;
   }
 
   function getIntersectionAndUnion(arr1, arr2) {
@@ -40,3 +41,31 @@ function solution(str1, str2) {
 
 console.log(solution('FRANCE', 'french')); //16384
 console.log(solution('handshake', 'shake hands')); //65536
+
+//다른 사람 풀이
+function solution(str1, str2) {
+  function explode(text) {
+    const result = [];
+    for (let i = 0; i < text.length - 1; i++) {
+      const node = text.substr(i, 2);
+      if (node.match(/[A-Za-z]{2}/)) {
+        result.push(node.toLowerCase());
+      }
+    }
+    return result;
+  }
+
+  const arr1 = explode(str1);
+  const arr2 = explode(str2);
+  const set = new Set([...arr1, ...arr2]);
+  let union = 0;
+  let intersection = 0;
+
+  set.forEach((item) => {
+    const has1 = arr1.filter((x) => x === item).length;
+    const has2 = arr2.filter((x) => x === item).length;
+    union += Math.max(has1, has2);
+    intersection += Math.min(has1, has2);
+  });
+  return union === 0 ? 65536 : Math.floor((intersection / union) * 65536);
+}
