@@ -19,4 +19,22 @@ function solution(skill, skill_trees) {
   return answer;
 }
 
+
+//다른 사람 풀이
+function solution(skill, skill_trees) {
+  var answer = 0;
+  var regex = new RegExp(`[^${skill}]`, 'g');
+
+  console.log(regex) // /[^CBD]/g
+  
+  return skill_trees
+  .map((x) => {
+    console.log(x.replace(regex, '')) // BCD, CBD, CB, BD
+    return x.replace(regex, '')})
+  .filter((x) => {
+    return skill.indexOf(x) === 0 || x === "";
+  })
+  .length
+}
+
 console.log(solution('CBD', ['BACDE', 'CBADF', 'AECB', 'BDA'])); // 2
